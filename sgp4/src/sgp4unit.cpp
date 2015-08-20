@@ -318,17 +318,18 @@ static void dpper
            // nodep used without a trigonometric function ahead
            if ((nodep < 0.0) && (opsmode == 'a'))
                nodep = nodep + twopi;
-           if (fabs(xnoh - nodep) > pi)
+           if (fabs(xnoh - nodep) > pi) {
              if (nodep < xnoh)
                 nodep = nodep + twopi;
                else
                 nodep = nodep - twopi;
+         }
            mp    = mp + pl;
            argpp = xls - mp - cosip * nodep;
          }
        }   // if init == 'n'
 
-//#include "debug1.cpp"
+//#include "debug1.inl"
 }  // end dpper
 
 /*-----------------------------------------------------------------------------
@@ -596,7 +597,7 @@ static void dscom
      xh2  =  -2.0 * s2 * z22;
      xh3  =  -2.0 * s2 * (z23 - z21);
 
-//#include "debug2.cpp"
+//#include "debug2.inl"
 }  // end dscom
 
 /*-----------------------------------------------------------------------------
@@ -900,7 +901,7 @@ static void dsinit
          nm    = no + dndt;
        }
 
-//#include "debug3.cpp"
+//#include "debug3.inl"
 }  // end dsinit
 
 /*-----------------------------------------------------------------------------
@@ -1122,7 +1123,7 @@ static void dspace
          nm = no + dndt;
        }
 
-//#include "debug4.cpp"
+//#include "debug4.inl"
 }  // end dsspace
 
 /*-----------------------------------------------------------------------------
@@ -1248,7 +1249,7 @@ static void initl
         gsto = gstime(epoch + 2433281.5);
 
 
-//#include "debug5.cpp"
+//#include "debug5.inl"
 }  // end initl
 
 /*-----------------------------------------------------------------------------
@@ -1604,7 +1605,7 @@ bool sgp4init
 
        satrec.init = 'n';
 
-//#include "debug6.cpp"
+//#include "debug6.inl"
        //sgp4fix return boolean. satrec.error contains any error codes
        return true;
 }  // end sgp4init
@@ -1979,7 +1980,7 @@ bool sgp4
          return false;
        }
 
-//#include "debug7.cpp"
+//#include "debug7.inl"
      return true;
 }  // end sgp4
 
