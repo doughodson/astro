@@ -253,7 +253,7 @@ namespace sgp4 {
 
 }
 
-int main(char**, int argc)
+int main(int argc, char**)
 {
 	return sgp4::main();
 }
